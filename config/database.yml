@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: SQL_ASCII
+  database: project_development
+  pool: 5
+  username: postgres
+  password: postgres
