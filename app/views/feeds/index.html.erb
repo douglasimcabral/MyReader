@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class='text-danger'>> Meus Feeds</h3>
+
+<hr />
+
+			<div class="row">
+				<div class="col-md-6">
+				  <p class='text-left'><a class='btn btn-danger' href='..'>In&iacute;cio</a></p>
+				</div>
+				<div class="col-md-6">
+				  <p class='text-right'><a class='btn btn-warning' href='../feeds/new'>Adicionar Feed</a></p>
+				</div>
+			</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>T&iacute;tulo</th>
+      <th>Url</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr>
+        <td><strong><%= feed.title %></strong></td>
+        <td><%= feed.url %></td>
+        <td><%= link_to 'Atualizar', retrieve_feed_path(feed) %></td>
+        <td><%= link_to 'Exibir', feed %></td>
+        <td><%= link_to 'Editar', edit_feed_path(feed) %></td>
+        <td><%= link_to 'Excluir', feed, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />

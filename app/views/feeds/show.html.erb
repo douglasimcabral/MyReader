@@ -1,0 +1,40 @@
+<h4 id="notice" class='text-center text-success'><strong><%= notice %></strong></h4>
+
+<h3 class='text-danger'>> Detalhes do Feed <%= @feed.id %></h3>
+
+<div class="well">
+
+<p>
+  <strong>T&iacute;tulo:</strong>
+  <%= @feed.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @feed.url %>
+</p>
+
+<p>
+  <strong>Criado:</strong>
+  <%= @feed.created_at %>
+</p>
+
+<p>
+  <strong>Atualizado:</strong>
+  <%= @feed.updated_at %>
+</p>
+
+</div>
+
+			<div class="row">
+				<div class="col-md-6">
+				  <p class='text-left'><a class='btn btn-danger' href='..'>In&iacute;cio</a></p>
+				</div>
+				<div class="col-md-6">
+				  <p class='text-right'><a class='btn btn-default' href='../feeds/<%= @feed.id %>/retrieve'>Atualizar</a> <a class='btn btn-warning' href='../feeds/<%= @feed.id %>/edit'>Editar</a> <a class='btn btn-danger' href='../feeds'>Meus Feeds</a></p>
+				</div>
+			</div>
+
+<%= render :partial => 'entries/index', :locals => {:entries =>  @feed.entries} %>
+
+<br />

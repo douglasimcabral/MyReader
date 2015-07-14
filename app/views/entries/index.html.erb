@@ -1,0 +1,7 @@
+<h4 id="notice" class='text-center text-success'><strong><%= notice %></strong></h4>
+
+<p class='text-right'><a class='btn btn-danger' href='feeds'><i class="fa fa-rss"></i> Meus Feeds</a> <a class='btn btn-warning' href='feeds/new'><i class="fa fa-plus"></i> Adicionar Feed</a></p>
+
+<%= render :partial => 'index', :locals => {:entries => @entries} %>
+
+<br />

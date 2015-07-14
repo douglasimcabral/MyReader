@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyReader</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="/assets/favicon.png">
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+<br /><p class='text-center'><a href='..'><img src="/assets/logo.png" alt="MyReader" title='MyReader' /></a></p>
+
+<h4 class='text-center text-warning'><i class="fa fa-leanpub"></i> Leitor de feed de not&iacute;cias no formato RSS. Um "substituto" ao Google Reader.</h4>
+
+<hr />
+
+<%= yield %>
+
+<hr />
+
+<p class='text-center'><small class='text-muted'><strong>My<i class="fa fa-rss fa-2x"></i>Reader</strong> - Projetado por: Iuri | Marcelo Cicco | Marcelo Gomes | Menino | Rivaldo | Sandro</small></p>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

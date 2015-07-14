@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>T&iacute;tulo</th>
+      <th>Not&iacute;cia</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% entries.each do |entry| %>
+      <tr>
+        <td><strong><a class='text-danger' href='feeds/<%= entry.feed.id %>'><i class='fa fa-rss-square'></i> <%= entry.feed.title %></a></strong></td>
+        <td><a class='text-warning' href='<%= entry.url %>' target='_blank'><%= entry.title %></a></td>
+        <td><%= link_to 'Excluir', entry, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
