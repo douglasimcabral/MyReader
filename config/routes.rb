@@ -1,8 +1,24 @@
 Rails.application.routes.draw do
 
   root :to => 'entries#index'
+  
+  get 'sessions/new'
+
+  get 'users/new'
+  
+  get 'signup'  => 'users#new'
+  
+  get 'login'   => 'sessions#new'
+  
+  get 'login/new'
+  
+  delete 'logout'  => 'sessions#destroy'
 
   resources :entries
+  
+  resources :users
+  
+  resources :sessions
 
   resources :feeds do
     member do
