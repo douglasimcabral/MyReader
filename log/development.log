@@ -1,0 +1,613 @@
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 12:52:37 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  Rendered entries/_index.html.erb (4.4ms)
+  Rendered entries/index.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 1715ms (Views: 1688.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 12:52:41 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 12:52:41 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 12:52:42 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 12:52:42 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 12:52:42 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 12:52:45 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries"  ORDER BY created_at DESC[0m
+  Rendered entries/_index.html.erb (1.4ms)
+  Rendered entries/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/feeds/new" for 191.45.93.156 at 2015-07-15 12:52:49 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#new as HTML
+  Rendered feeds/_form.html.erb (93.3ms)
+  Rendered feeds/new.html.erb within layouts/application (98.0ms)
+Completed 200 OK in 276ms (Views: 172.4ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/feeds" for 191.45.93.156 at 2015-07-15 12:53:05 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YItYlCC7ty+jyaTmdH7t+3+Ba4guELZkw/oEld4roAeIuEo/YRsAfcrHrrBZ+p6X7Wg4SYOF6n9o2umLnyvesg==", "feed"=>{"title"=>"G1 - Tecnologia e Games", "url"=>"http://g1.globo.com/dynamo/tecnologia/rss2.xml"}, "commit"=>"Create Feed"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFeed Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "feeds" WHERE "feeds"."url" = 'http://g1.globo.com/dynamo/tecnologia/rss2.xml' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feeds" ("title", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "G1 - Tecnologia e Games"], ["url", "http://g1.globo.com/dynamo/tecnologia/rss2.xml"], ["created_at", "2015-07-15 12:53:05.473217"], ["updated_at", "2015-07-15 12:53:05.473217"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mFeed Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "feeds" WHERE ("feeds"."url" = 'http://g1.globo.com/dynamo/tecnologia/rss2.xml' AND "feeds"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "feeds" SET "status" = $1, "updated_at" = $2 WHERE "feeds"."id" = $3  [["status", "Fetched (ring) 200 762 and parsed 0/40 entries"], ["updated_at", "2015-07-15 12:53:05.767047"], ["id", 1]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'tripadvisor-ganha-apela-o-contra-multa-italiana-por-cr-ticas-enganosas-2015-7-15-0' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "tripadvisor-ganha-apela-o-contra-multa-italiana-por-cr-ticas-enganosas-2015-7-15-0"], ["title", "TripAdvisor ganha apelação contra multa italiana por críticas enganosas"], ["url", "http://g1.globo.com/tecnologia/noticia/2015/07/tripadvisor-ganha-apelacao-contra-multa-italiana-por-criticas-enganosas.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:05.948942"], ["updated_at", "2015-07-15 12:53:05.948942"]]
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEntry Exists (3.0ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'escritores-e-livrarias-pedem-investiga-o-contra-amazon-2015-7-14-23' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "escritores-e-livrarias-pedem-investiga-o-contra-amazon-2015-7-14-23"], ["title", "Escritores e livrarias pedem investigação contra Amazon"], ["url", "http://g1.globo.com/tecnologia/noticia/2015/07/escritores-e-livrarias-pedem-investigacao-contra-amazon.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:05.966271"], ["updated_at", "2015-07-15 12:53:05.966271"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'mais-lidas-do-dia-14-julho-2015-2015-7-14-23' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "mais-lidas-do-dia-14-julho-2015-2015-7-14-23"], ["title", "Mais lidas do dia: 14/julho/2015"], ["url", "http://g1.globo.com/tecnologia/noticia/2015/07/mais-lidas-do-dia-14julho2015.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:05.978360"], ["updated_at", "2015-07-15 12:53:05.978360"]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'cineasta-laura-poitras-processa-governo-dos-eua-2015-7-14-20' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "cineasta-laura-poitras-processa-governo-dos-eua-2015-7-14-20"], ["title", "Cineasta Laura Poitras processa governo dos EUA"], ["url", "http://g1.globo.com/mundo/noticia/2015/07/cineasta-laura-poitras-processa-governo-dos-eua.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:05.987374"], ["updated_at", "2015-07-15 12:53:05.987374"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = '-batman-arkham-knight-ganha-traje-e-batm-vel-do-filme-de-tim-burton-2015-7-14-16' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "-batman-arkham-knight-ganha-traje-e-batm-vel-do-filme-de-tim-burton-2015-7-14-16"], ["title", "'Batman: Arkham Knight' ganha traje e batmóvel do filme de Tim Burton"], ["url", "http://g1.globo.com/tecnologia/games/noticia/2015/07/batman-arkham-knight-ganha-traje-e-batmovel-do-filme-de-tim-burton.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:05.996368"], ["updated_at", "2015-07-15 12:53:05.996368"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'piloto-usa-mochila-a-jato-para-voar-na-china-2015-7-14-14' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "piloto-usa-mochila-a-jato-para-voar-na-china-2015-7-14-14"], ["title", "Piloto usa 'mochila a jato' para voar na China"], ["url", "http://g1.globo.com/tecnologia/noticia/2015/07/piloto-usa-mochila-jato-para-voar-na-china.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:06.004586"], ["updated_at", "2015-07-15 12:53:06.004586"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'nokia-confirma-que-pode-voltar-ao-mercado-de-celulares-2015-7-14-13' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "nokia-confirma-que-pode-voltar-ao-mercado-de-celulares-2015-7-14-13"], ["title", "Nokia confirma que pode voltar ao mercado de celulares"], ["url", "http://g1.globo.com/economia/negocios/noticia/2015/07/nokia-confirma-que-pode-voltar-ao-mercado-de-celulares.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:06.012741"], ["updated_at", "2015-07-15 12:53:06.012741"]]
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = '-star-wars-fallout-4-e-metal-gear-v-os-top-games-do-2-semestre-de-2015-2015-7-14-11' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "-star-wars-fallout-4-e-metal-gear-v-os-top-games-do-2-semestre-de-2015-2015-7-14-11"], ["title", "'Star Wars', 'Fallout 4' e 'Metal Gear V': os top games do 2º semestre de 2015"], ["url", "http://g1.globo.com/tecnologia/games/noticia/2015/07/star-wars-fallout-4-e-metal-gear-v-os-top-games-do-2-semestre-de-2015.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:06.021901"], ["updated_at", "2015-07-15 12:53:06.021901"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'a-guerra-de-3-mil-clientes-enfurecidos-com-a-apple-2015-7-14-11' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "a-guerra-de-3-mil-clientes-enfurecidos-com-a-apple-2015-7-14-11"], ["title", "A guerra de 3 mil clientes enfurecidos com a Apple"], ["url", "http://g1.globo.com/tecnologia/noticia/2015/07/a-guerra-de-3-mil-clientes-enfurecidos-com-a-apple.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:06.029096"], ["updated_at", "2015-07-15 12:53:06.029096"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'google-homenageia-chegada-de-sonda-a-plut-o-com-doodle-especial-2015-7-14-10' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "entries" ("atom_id", "title", "url", "feed_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["atom_id", "google-homenageia-chegada-de-sonda-a-plut-o-com-doodle-especial-2015-7-14-10"], ["title", "Google homenageia chegada de sonda a Plutão com doodle especial"], ["url", "http://g1.globo.com/ciencia-e-saude/noticia/2015/07/google-homenageia-chegada-de-sonda-plutao-com-doodle-especial.html"], ["feed_id", 1], ["created_at", "2015-07-15 12:53:06.036313"], ["updated_at", "2015-07-15 12:53:06.036313"]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+Redirected to https://myreader-smarquesc.c9.io/feeds/1
+Completed 302 Found in 647ms (ActiveRecord: 59.2ms)
+
+
+Started GET "/feeds/1" for 191.45.93.156 at 2015-07-15 12:53:06 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.4ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  ORDER BY created_at DESC[0m  [["feed_id", 1]]
+  Rendered entries/_index.html.erb (8.7ms)
+  Rendered feeds/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 83ms (Views: 73.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 12:53:28 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered entries/_index.html.erb (19.9ms)
+  Rendered entries/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 164ms (Views: 160.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:17:58 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered entries/_index.html.erb (52.5ms)
+  Rendered entries/index.html.erb within layouts/application (53.9ms)
+Completed 200 OK in 609ms (Views: 598.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/bootstrap.min.self-26b6de3f572e5a4fe03041bd46cd0d774747140e69d6f164503289c2d19e996e.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:06 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:09 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:13 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:13 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:14 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.min.self-086d0ef8ffb531527c999ce32318afcdeed1b43b1788006b5a72f93f2000380c.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:17 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:17 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6605b52f725ed21ca480749ee59df3454bdd8362b8fdc9ddc7ce289644e03e50.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:19 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 13:18:19 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:23 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:24 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:24 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:25 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:18:26 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 191.45.93.156 at 2015-07-15 13:18:33 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:20:51 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries"  ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered entries/_index.html.erb (44.1ms)
+  Rendered entries/index.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 120ms (Views: 112.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-26b6de3f572e5a4fe03041bd46cd0d774747140e69d6f164503289c2d19e996e.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:52 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:52 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.min.self-086d0ef8ffb531527c999ce32318afcdeed1b43b1788006b5a72f93f2000380c.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6605b52f725ed21ca480749ee59df3454bdd8362b8fdc9ddc7ce289644e03e50.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 191.45.93.156 at 2015-07-15 13:20:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 191.45.93.156 at 2015-07-15 13:20:55 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:21:52 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered entries/_index.html.erb (14.1ms)
+  Rendered entries/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 94ms (Views: 90.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-26b6de3f572e5a4fe03041bd46cd0d774747140e69d6f164503289c2d19e996e.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:52 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:52 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.min.self-086d0ef8ffb531527c999ce32318afcdeed1b43b1788006b5a72f93f2000380c.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6605b52f725ed21ca480749ee59df3454bdd8362b8fdc9ddc7ce289644e03e50.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:53 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 191.45.93.156 at 2015-07-15 13:21:54 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 191.45.93.156 at 2015-07-15 13:21:55 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:22:28 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT "entries".* FROM "entries"  ORDER BY created_at DESC[0m
+  [1m[35mFeed Load (0.3ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered entries/_index.html.erb (14.5ms)
+  Rendered entries/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 177ms (Views: 174.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap.min.self-26b6de3f572e5a4fe03041bd46cd0d774747140e69d6f164503289c2d19e996e.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.min.self-086d0ef8ffb531527c999ce32318afcdeed1b43b1788006b5a72f93f2000380c.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-ade00adcde1249df4241695c2aae67a1990b158fa2c1ae5aedad5425292b1a62.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6605b52f725ed21ca480749ee59df3454bdd8362b8fdc9ddc7ce289644e03e50.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 13:22:29 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 191.45.93.156 at 2015-07-15 13:22:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 191.45.93.156 at 2015-07-15 13:22:31 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 191.45.93.156 at 2015-07-15 13:22:31 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:23:28 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.5ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.2ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered entries/_index.html.erb (11.8ms)
+  Rendered entries/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 338ms (Views: 335.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.min.self-26b6de3f572e5a4fe03041bd46cd0d774747140e69d6f164503289c2d19e996e.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:30 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:31 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.min.self-086d0ef8ffb531527c999ce32318afcdeed1b43b1788006b5a72f93f2000380c.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6605b52f725ed21ca480749ee59df3454bdd8362b8fdc9ddc7ce289644e03e50.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:32 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:33 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/entries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:33 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/feeds.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:33 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 191.45.93.156 at 2015-07-15 13:23:33 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 191.45.93.156 at 2015-07-15 13:23:34 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 191.45.93.156 at 2015-07-15 13:23:34 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/feeds" for 191.45.93.156 at 2015-07-15 13:23:37 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+  Rendered feeds/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/feeds/1/retrieve" for 191.45.93.156 at 2015-07-15 13:23:40 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#retrieve as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFeed Exists (0.6ms)[0m  SELECT  1 AS one FROM "feeds" WHERE (LOWER("feeds"."url") = LOWER('http://g1.globo.com/dynamo/tecnologia/rss2.xml') AND "feeds"."id" != 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'tripadvisor-ganha-apela-o-contra-multa-italiana-por-cr-ticas-enganosas-2015-7-15-0' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'escritores-e-livrarias-pedem-investiga-o-contra-amazon-2015-7-14-23' AND "entries"."feed_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'mais-lidas-do-dia-14-julho-2015-2015-7-14-23' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEntry Exists (0.3ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'cineasta-laura-poitras-processa-governo-dos-eua-2015-7-14-20' AND "entries"."feed_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = '-batman-arkham-knight-ganha-traje-e-batm-vel-do-filme-de-tim-burton-2015-7-14-16' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEntry Exists (0.3ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'piloto-usa-mochila-a-jato-para-voar-na-china-2015-7-14-14' AND "entries"."feed_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'nokia-confirma-que-pode-voltar-ao-mercado-de-celulares-2015-7-14-13' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEntry Exists (0.3ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = '-star-wars-fallout-4-e-metal-gear-v-os-top-games-do-2-semestre-de-2015-2015-7-14-11' AND "entries"."feed_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEntry Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'a-guerra-de-3-mil-clientes-enfurecidos-com-a-apple-2015-7-14-11' AND "entries"."feed_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mEntry Exists (0.3ms)[0m  SELECT  1 AS one FROM "entries" WHERE ("entries"."atom_id" = 'google-homenageia-chegada-de-sonda-a-plut-o-com-doodle-especial-2015-7-14-10' AND "entries"."feed_id" = 1) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to https://myreader-smarquesc.c9.io/feeds/1
+Completed 302 Found in 565ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/feeds/1" for 191.45.93.156 at 2015-07-15 13:23:41 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  ORDER BY created_at DESC[0m  [["feed_id", 1]]
+  Rendered entries/_index.html.erb (6.0ms)
+  Rendered feeds/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 73ms (Views: 70.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 191.45.93.156 at 2015-07-15 13:23:47 +0000
+Cannot render console from 191.45.93.156! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.6ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered entries/_index.html.erb (16.9ms)
+  Rendered entries/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 95ms (Views: 91.8ms | ActiveRecord: 1.1ms)
