@@ -1,3 +1,13 @@
+a {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #990000;
+    text-decoration: none;
+}
+
 body {
     background: url("grid.png");
 }
