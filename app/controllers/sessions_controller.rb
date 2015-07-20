@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 
+
   def new
+    
   end
 
   def create
@@ -8,8 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase, password: params[:session][:password])
    
     if user.nil?
-      destroy
-    
+      redirect_to '/login', notice: 'Usuário e senha não encontrado!'
     else
       log_in user
       redirect_to root_url
