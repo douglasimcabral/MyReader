@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase, password: params[:session][:password])
    
     if user.nil?
-      redirect_to '/login', notice: 'Usuário e senha não encontrado!'
+      redirect_to '/login', notice: 'Usuario e senha nao encontrado!'
     else
       log_in user
       redirect_to root_url
