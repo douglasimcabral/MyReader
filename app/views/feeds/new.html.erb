@@ -1,7 +1,13 @@
-<h3 class='text-warning'>> Novo Feed</h3>
+<h1>New Feed</h1>
 
-<hr />
-
+<% if logged_in? %>
+    <p>O Feed será adicionado a conta de:  <%= current_user.email %></p>
 <%= render 'form' %>
+<% else %>
+Você precisa estar logado para adicionar um feed
 
-<br />
+<% end %>
+
+
+
+<%= link_to 'Home', entries_path %>
