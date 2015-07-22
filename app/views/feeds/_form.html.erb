@@ -22,6 +22,9 @@
     <label for="feed_url">Url</label><br />
     <%= f.text_field :url %>
   </div>
+  <div class="field">
+    <input type="hidden" name="feed[user_id]" id="feed_user_id" value="<%= current_user.id %>">
+  </div>
   <div class="actions">
     <br /><input type="submit" name="commit" value="Cadastrar" class='btn btn-danger' /> <a class='btn btn-default' href='..'>Cancelar</a>
   </div>

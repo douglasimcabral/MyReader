@@ -24,6 +24,7 @@
 
   <tbody>
     <% @feeds.each do |feed| %>
+    <% if current_user.id == feed.user_id %>
       <tr>
         <td><strong><i class="fa fa-rss-square"></i> <%= feed.title %></strong></td>
         <td><i class="fa fa-globe"></i> <%= feed.url %></td>
@@ -32,6 +33,7 @@
         <td><%= link_to 'Editar', edit_feed_path(feed) %></td>
         <td><%= link_to 'Excluir', feed, method: :delete, data: { confirm: 'Deseja realmente excluir?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

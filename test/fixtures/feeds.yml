@@ -3,7 +3,11 @@
 one:
   title: MyString
   url: MyString
+  status: MyString
+  user_id: 1
 
 two:
   title: MyString
   url: MyString
+  status: MyString
+  user_id: 1
