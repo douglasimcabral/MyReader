@@ -15,7 +15,7 @@ module SessionsHelper
     !current_user.nil?
   end
   
-   # Logs out the current user.
+  # Logs out the current user.
   def log_out
     puts 'log out inicio'
     session.delete(:user_id)

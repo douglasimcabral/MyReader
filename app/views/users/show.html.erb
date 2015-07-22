@@ -1,8 +1,8 @@
-
-
-Bem vindo <%= @user.name %>, você se cadastrou com o email: <%= @user.email %>
-
-
-<br>
-
-<%= link_to 'Back', entries_path %>
+<div class="well">
+<h3 class="text-center text-danger"><i class="fa fa-3x fa-smile-o"></i><br />Bem-vindo ao <strong>MyReader</strong> <%= @user.name %>,
+você se cadastrou com o email: <%= @user.email %></h3>
+<h3 class="text-center">Clique em uma opção para continuar:</h3><br />
+<p class='text-center'><a class='btn btn-lg btn-danger' href='..'>Início</a>
+<a class='btn btn-lg btn-warning' href='#'>Manual</a>
+<%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-lg btn-default' %></p>
+</div>

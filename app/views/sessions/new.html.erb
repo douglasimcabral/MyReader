@@ -1,26 +1,39 @@
-<p id="notice"><%= notice %></p>
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+		<div class="col-lg-4 column">
+		</div>
+		<div class="col-lg-4 column"><br />
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span class="glyphicon glyphicon-lock"></span> <strong>Autenticação</strong>
+					</h3>
+				</div>
+				<div class="panel-body">
+			<%= form_for(:session, url: sessions_path) do |f| %>
+			  <h5 id="notice" class='text-center text-warning'><strong><%= notice %></strong></h5>
+				<div class="form-group ">
+					 <%= f.label :email %>
+					 <div class="input-group">
+					 <div class="input-group-addon"><i class="fa fa-at"></i></div>
+					 <%= f.email_field :email, class: 'form-control' %>
+					 </div>
+				</div>
+				<div class="form-group ">
+					 <label for="inputSenha">Senha</label>
+					 <div class="input-group">
+					 <div class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></div>
+					 <%= f.password_field :password, class: 'form-control' %>
+					 </div>
+				</div>
+				<p class="text-center"><%= f.submit "Entrar", class: "btn btn-danger" %></p><br />
+				<p class="text-center"><span class="glyphicon glyphicon-edit text-warning"></span> <%= link_to "Cadastre-se!", signup_path, class: "text-warning" %></p>
+			<% end %>
+				</div>
+				<div class="panel-footer">
+				</div>
+				</div>
+		</div>
+		<div class="col-lg-4 column">
+		</div>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      
-      <br>
-      
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-      
-      
-      <br>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <%= link_to "Sign up now!", signup_path %>
-    <%= link_to 'Home', entries_path %>
-  </div>
 </div>

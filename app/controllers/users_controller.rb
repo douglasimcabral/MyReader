@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :retrieve]
-  
-
    
   def show
     @user = User.find(params[:id])
@@ -25,17 +23,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.name.delete(' ') == '' or @user.password.delete(' ') == '' or @user.email.delete(' ') == ''
-      redirect_to '/signup', notice: 'Nenhum dos campos podem ficar vazio!'
+      redirect_to '/signup', notice: 'Favor preencher todos os campos!'
     else
       if @user.save
-       flash[:success] = "Welcome to the Sample App!"
+       flash[:success] = "Bem-vindo ao MyReader!"
        redirect_to @user
       else
         render 'new'
       end
     end
   end
-  
   
   # PATCH/PUT /feeds/1
   def update
@@ -52,8 +49,6 @@ class UsersController < ApplicationController
       
   end
 
-  
-
   private
 
     def user_params
@@ -64,9 +59,5 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-    
-    
-    
    
-
 end

@@ -2,20 +2,14 @@
 
 <p class='text-right'>
     <a class='btn btn-danger' href='feeds'><i class="fa fa-rss"></i> Meus Feeds</a> 
-    <a class='btn btn-warning' href='feeds/new'><i class="fa fa-plus"></i> Adicionar Feed</a></p>
-    
-    
-    
-<%= link_to 'List of Users', users_path %> |
-<%= link_to "Log out", logout_path, method: "delete" %> |
-<%= link_to "Login!", login_path %> | 
-
-<%= link_to "Sign up now!", signup_path %>
+    <a class='btn btn-warning' href='feeds/new'><i class="fa fa-plus"></i> Adicionar Feed</a>
+    <a class='btn btn-default' href='#'><i class="fa fa-file"></i> Manual</a>    
+    <%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-danger' %></p>    
 
 <% if logged_in? %>
     <%= render :partial => 'index', :locals => {:entries => @entries} %>
 <% else %>
-<p>Log in no MyReader, para ver seus feeds de noticias</p>
+    <p>Entre no MyReader para visualizar seus feeds de noticias!</p>
 <% end %>
 
 <br />

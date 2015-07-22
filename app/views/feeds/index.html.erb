@@ -6,10 +6,10 @@
 
 			<div class="row">
 				<div class="col-md-6">
-				  <p class='text-left'><a class='btn btn-danger' href='..'>In&iacute;cio</a></p>
+				  <p class='text-left'><a class='btn btn-danger' href='..'><i class="fa fa-home"></i> In&iacute;cio</a></p>
 				</div>
 				<div class="col-md-6">
-				  <p class='text-right'><a class='btn btn-warning' href='../feeds/new'>Adicionar Feed</a></p>
+				  <p class='text-right'><a class='btn btn-warning' href='../feeds/new'><i class="fa fa-plus"></i> Adicionar Feed</a></p>
 				</div>
 			</div>
 
@@ -25,8 +25,8 @@
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
-        <td><strong><%= feed.title %></strong></td>
-        <td><%= feed.url %></td>
+        <td><strong><i class="fa fa-rss-square"></i> <%= feed.title %></strong></td>
+        <td><i class="fa fa-globe"></i> <%= feed.url %></td>
         <td><%= link_to 'Atualizar', retrieve_feed_path(feed) %></td>
         <td><%= link_to 'Exibir', feed %></td>
         <td><%= link_to 'Editar', edit_feed_path(feed) %></td>
