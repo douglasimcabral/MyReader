@@ -30,10 +30,6 @@ class FeedsController < ApplicationController
     
     existeFeed = Feed.find_by(url: @feed.url, user_id: @feed.user_id )
     
-    
-    puts '---------------------------'
-    puts existeFeed
-
     if existeFeed.nil?
       if @feed.save
         body, ok = SuperfeedrEngine::Engine.subscribe(@feed, {:retrieve => true})
@@ -54,20 +50,32 @@ class FeedsController < ApplicationController
   end
 
   def update
-    if @feed.update(feed_params)
-      body, ok = SuperfeedrEngine::Engine.unsubscribe(@feed)
-      if !ok
-        render :edit, notice: "Feed alterado com sucesso, mas nao foi possivel recarrega-lo. #{body}"
-      else
-        body, ok = SuperfeedrEngine::Engine.subscribe(@feed)
+    
+    @feed = Feed.new(feed_params)
+    
+    existeFeed = Feed.find_by(url: @feed.url, user_id: @feed.user_id )
+    
+    if existeFeed.nil?
+      if @feed.update(feed_params)
+        body, ok = SuperfeedrEngine::Engine.unsubscribe(@feed)
         if !ok
           render :edit, notice: "Feed alterado com sucesso, mas nao foi possivel recarrega-lo. #{body}"
         else
-          redirect_to @feed, notice: 'Feed alterado com sucesso!'
+          body, ok = SuperfeedrEngine::Engine.subscribe(@feed)
+          if !ok
+            render :edit, notice: "Feed alterado com sucesso, mas nao foi possivel recarrega-lo. #{body}"
+          else
+            redirect_to @feed, notice: 'Feed alterado com sucesso!'
+          end
         end
+      else
+        render :edit
       end
     else
-      render :edit
+      puts existeFeed.id
+      url = "/feeds/" + existeFeed.id.to_s + "/edit"
+      puts url
+      redirect_to url , notice: "Feed ja cadastrado para esse usuario."
     end
   end
 
