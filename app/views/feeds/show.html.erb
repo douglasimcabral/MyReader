@@ -31,7 +31,10 @@
 				  <p class='text-left'><a class='btn btn-danger' href='..'><i class="fa fa-home"></i> In&iacute;cio</a></p>
 				</div>
 				<div class="col-lg-6">
-				  <p class='text-right'><a class='btn btn-default' href='../feeds/<%= @feed.id %>/retrieve'><i class="fa fa-refresh"></i> Atualizar</a> <a class='btn btn-warning' href='../feeds/<%= @feed.id %>/edit'><i class="fa fa-edit"></i> Editar</a> <a class='btn btn-danger' href='../feeds'><i class="fa fa-rss"></i> Meus Feeds</a></p>
+				  <p class='text-right'><a class='btn btn-warning' href='../feeds/<%= @feed.id %>/retrieve'><i class="fa fa-refresh"></i> Atualizar</a>
+				  <a class='btn btn-warning' href='../feeds/<%= @feed.id %>/edit'><i class="fa fa-edit"></i> Editar</a>
+				  <a class='btn btn-danger' href='../feeds'><i class="fa fa-rss"></i> Meus Feeds</a>
+				  <%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-default' %></p>
 				</div>
 			</div>
 

@@ -41,3 +41,13 @@ body {
 .pagination>li>a:hover, .pagination>li>span {
     color: #990000;
 }
+
+.red {
+    color: #990000;
+    text-decoration: none;
+}
+
+.red:hover {
+    color: #d9534f;
+    text-decoration: none;
+}

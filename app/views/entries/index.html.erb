@@ -3,8 +3,7 @@
 <p class='text-right'>
     <a class='btn btn-danger' href='feeds'><i class="fa fa-rss"></i> Meus Feeds</a> 
     <a class='btn btn-warning' href='feeds/new'><i class="fa fa-plus"></i> Adicionar Feed</a>
-    <a class='btn btn-default' href='#'><i class="fa fa-file"></i> Manual</a>    
-    <%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-danger' %></p>    
+    <%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-default' %></p>    
 
 <% if logged_in? %>
     <%= render :partial => 'index', :locals => {:entries => @entries} %>

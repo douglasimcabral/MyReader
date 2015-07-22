@@ -1,3 +1,11 @@
+			<div class="row">
+				<div class="col-lg-6">
+				</div>
+				<div class="col-lg-6">
+				  <p class='text-right'><%= link_to "Sair", logout_path, method: "delete", class: 'btn btn-default' %></p>
+				</div>
+			</div>
+
 <%= form_for(@feed) do |f| %>
   <% if @feed.errors.any? %>
     <div id="error_explanation">
@@ -14,18 +22,26 @@
     </div>
   <% end %>
 
+			<div class="row">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-8">
   <div class="field">
     <label for="feed_titulo">T&iacute;tulo</label><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div><br />
   <div class="field">
     <label for="feed_url">Url</label><br />
-    <%= f.text_field :url %>
+    <%= f.text_field :url, class: 'form-control' %>
   </div>
   <div class="field">
     <input type="hidden" name="feed[user_id]" id="feed_user_id" value="<%= current_user.id %>">
   </div>
   <div class="actions">
-    <br /><input type="submit" name="commit" value="Cadastrar" class='btn btn-danger' /> <a class='btn btn-default' href='..'>Cancelar</a>
+    <br /><p class="text-center"><input type="submit" name="commit" value="Cadastrar" class='btn btn-danger' /> <a class='btn btn-default' href='..'>Cancelar</a></p>
   </div>
 <% end %>
+				</div>
+				<div class="col-lg-2">
+				</div>
+      </div>				
