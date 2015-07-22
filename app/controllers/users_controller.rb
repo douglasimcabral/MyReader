@@ -27,7 +27,6 @@ class UsersController < ApplicationController
         redirect_to '/signup', notice: 'Favor preencher todos os campos!'
     end
 
-puts @user.email    
     existeUser = User.find_by_email(@user.email)
    
     if existeUser.nil?

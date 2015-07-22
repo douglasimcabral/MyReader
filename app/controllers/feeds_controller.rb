@@ -27,19 +27,29 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.new(feed_params)
+    
+    existeFeed = Feed.find_by(url: @feed.url, user_id: @feed.user_id )
+    
+    
+    puts '---------------------------'
+    puts existeFeed
 
-    if @feed.save
-      body, ok = SuperfeedrEngine::Engine.subscribe(@feed, {:retrieve => true})
-      if !ok
-        redirect_to @feed, notice: "Feed cadastrado com sucesso, mas nao carregado. #{body}"
-      else
-        if body
-          @feed.notified JSON.parse(body)
+    if existeFeed.nil?
+      if @feed.save
+        body, ok = SuperfeedrEngine::Engine.subscribe(@feed, {:retrieve => true})
+        if !ok
+          redirect_to @feed, notice: "Feed cadastrado com sucesso, mas nao carregado. #{body}"
+        else
+          if body
+            @feed.notified JSON.parse(body)
+          end
+          redirect_to @feed, notice: 'Feed cadastrado e carregado com sucesso!'
         end
-        redirect_to @feed, notice: 'Feed cadastrado e carregado com sucesso!'
+      else
+        render :new
       end
     else
-      render :new
+      redirect_to '/feeds/new', notice: 'Feed ja cadastrado para este usuario!'
     end
   end
 
