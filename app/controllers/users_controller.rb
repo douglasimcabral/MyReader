@@ -20,17 +20,25 @@ class UsersController < ApplicationController
   
   def create
     
+   
     @user = User.new(user_params)
     
     if @user.name.delete(' ') == '' or @user.password.delete(' ') == '' or @user.email.delete(' ') == ''
-      redirect_to '/signup', notice: 'Favor preencher todos os campos!'
-    else
-      if @user.save
-       flash[:success] = "Bem-vindo ao MyReader!"
-       redirect_to @user
-      else
-        render 'new'
-      end
+        redirect_to '/signup', notice: 'Favor preencher todos os campos!'
+    end
+
+puts @user.email    
+    existeUser = User.find_by_email(@user.email)
+   
+    if existeUser.nil?
+        if @user.save
+         flash[:success] = "Bem-vindo ao MyReader!"
+         redirect_to @user
+        else
+          render 'new'
+        end
+    else   
+      redirect_to '/signup', notice: 'Email ja cadastrado!'
     end
   end
   

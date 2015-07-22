@@ -2,6 +2,12 @@ class SessionsController < ApplicationController
 
   def new
     
+    if logged_in?
+      redirect_to entries_path
+    else
+     
+      
+    end
   end
 
   def create
@@ -12,7 +18,7 @@ class SessionsController < ApplicationController
       redirect_to '/login', notice: 'Login e/ou senha incorreto(s)!'
     else
       log_in user
-      redirect_to root_url
+      redirect_to entries_path
     end
   end
 

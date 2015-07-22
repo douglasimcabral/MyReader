@@ -2,7 +2,11 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :destroy]
 
   def index
-    @entries = Entry.all
+    if logged_in?
+      @entries = Entry.all
+    else
+        redirect_to root_url
+    end
   end
 
   def show
