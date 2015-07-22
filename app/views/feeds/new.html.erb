@@ -1,13 +1,14 @@
-<h1>New Feed</h1>
+<h3 class='text-warning'>> Adicionar Feed</h3>
+
+<hr />
 
 <% if logged_in? %>
-    <p>O Feed será adicionado a conta de:  <%= current_user.email %></p>
-<%= render 'form' %>
+
+    <%= render 'form' %>
+    
 <% else %>
-Você precisa estar logado para adicionar um feed
+    Você precisa entrar no MyReader para adicionar um novo feed!
 
 <% end %>
 
-
-
-<%= link_to 'Home', entries_path %>
+<br />

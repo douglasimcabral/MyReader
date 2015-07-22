@@ -4,6 +4,12 @@
   <title>MyReader</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/dataTables.bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  <script type="text/javascript" language="javascript" src="/assets/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" language="javascript" src="/assets/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="/assets/dataTables.bootstrap.js"></script>    
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" href="/assets/favicon.png">
 </head>
@@ -28,6 +34,37 @@
 		</div>
 	</div>
 </div>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			$('#table').dataTable( {
+				language: {
+				"sEmptyTable": "Nenhum registro encontrado",
+				"sInfo": "Mostrando de _START_ ate _END_ de _TOTAL_ registros",
+				"sInfoEmpty": "Mostrando 0 ate 0 de 0 registros",
+				"sInfoFiltered": "(Filtrados de _MAX_ registros)",
+				"sInfoPostFix": "",
+				"sInfoThousands": ".",
+				"sLengthMenu": "_MENU_ Resultados por pagina",
+				"sLoadingRecords": "Carregando...",
+				"sProcessing": "Processando...",
+				"sZeroRecords": "<p class='text-center text-danger'><strong>Nenhum registro encontrado!</strong></p>",
+				"sSearch": "Pesquisar ",
+				"oPaginate": {
+					"sNext": "Proximo",
+					"sPrevious": "Anterior",
+					"sFirst": "Primeiro",
+					"sLast": "Ultimo"
+					},
+				"oAria": {
+					"sSortAscending": ": Ordenar colunas de forma ascendente",
+					"sSortDescending": ": Ordenar colunas de forma descendente"
+					}
+				}, 		
+					"pageLength": 25
+			});
+		});
+	</script>
 
 </body>
 </html>
