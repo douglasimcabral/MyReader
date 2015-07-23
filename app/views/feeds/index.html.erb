@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h3 class='text-danger'>> Meus Feeds</h3>
-
+<div class='text-right'>
+    Usuario: <strong><%= current_user.name %>
+    </div>
 <hr />
 
 			<div class="row">
@@ -13,6 +15,9 @@
 				</div>
 			</div>
 
+
+ 
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,6 +26,7 @@
       <th colspan="4"></th>
     </tr>
   </thead>
+  
 
   <tbody>
     <% @feeds.each do |feed| %>
