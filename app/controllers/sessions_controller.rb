@@ -1,12 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
-    
     if logged_in?
       redirect_to entries_path
-    else
-     
-      
     end
   end
 

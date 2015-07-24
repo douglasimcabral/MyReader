@@ -50,16 +50,17 @@ class FeedsController < ApplicationController
     
   rescue => e
     @feed.destroy
-    redirect_to '/feeds/new', notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
+    redirect_to '/feeds/new', notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida (http://w....)"
     
   end
 
-  def update
+  
     
-    @feed = Feed.new(feed_params)
-    
-    existeFeed = Feed.find_by(url: @feed.url, user_id: @feed.user_id )
-    
+    def update
+      
+    id = @feed.id
+    existeFeed = Feed.find_by(url: :url, user_id: :user_id )
+
     if existeFeed.nil?
       if @feed.update(feed_params)
         body, ok = SuperfeedrEngine::Engine.unsubscribe(@feed)
@@ -76,20 +77,26 @@ class FeedsController < ApplicationController
       else
         render :edit
       end
+      
     else
-      puts existeFeed.id
       url = "/feeds/" + existeFeed.id.to_s + "/edit"
-      puts url
       redirect_to url , notice: "Feed ja cadastrado para esse usuario."
-    end
-    
+    end  
+  
     rescue => e
-    redirect_to url , notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
+      url = "/feeds/" + id.to_s + "/edit"
+      redirect_to url , notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida (http://...)"
+    
   end
+  
+  
+  
+  
+  
 
   def destroy
     body, ok =  SuperfeedrEngine::Engine.unsubscribe(@feed)
-    if false
+    if !ok
       redirect_to @feed, notice: body
     else
       @feed.destroy
@@ -97,7 +104,8 @@ class FeedsController < ApplicationController
     end
     
     rescue => e
-   redirect_to feeds_url, notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
+    @feed.destroy
+    redirect_to feeds_url, notice: 'Feed excluido com sucesso!'
   end
 
   private
