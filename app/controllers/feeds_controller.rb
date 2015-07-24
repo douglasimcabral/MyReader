@@ -47,6 +47,11 @@ class FeedsController < ApplicationController
     else
       redirect_to '/feeds/new', notice: 'Feed ja cadastrado para este usuario!'
     end
+    
+  rescue => e
+    @feed.destroy
+    redirect_to '/feeds/new', notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
+    
   end
 
   def update
@@ -77,16 +82,22 @@ class FeedsController < ApplicationController
       puts url
       redirect_to url , notice: "Feed ja cadastrado para esse usuario."
     end
+    
+    rescue => e
+    redirect_to url , notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
   end
 
   def destroy
     body, ok =  SuperfeedrEngine::Engine.unsubscribe(@feed)
-    if !ok
+    if false
       redirect_to @feed, notice: body
     else
       @feed.destroy
       redirect_to feeds_url, notice: 'Feed excluido com sucesso!'
     end
+    
+    rescue => e
+   redirect_to feeds_url, notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
   end
 
   private
