@@ -40941,3 +40941,285 @@ Processing by FeedsController#edit as HTML
   Rendered feeds/_form.html.erb (1.4ms)
   Rendered feeds/edit.html.erb within layouts/application (3.2ms)
 Completed 200 OK in 169ms (Views: 166.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 150.161.2.202 at 2015-07-24 13:22:30 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://myreader-mcncicco.c9.io/entries
+Completed 302 Found in 82ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/entries" for 150.161.2.202 at 2015-07-24 13:22:31 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EntriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntry Load (1.1ms)[0m  SELECT "entries".* FROM "entries"  ORDER BY created_at DESC
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 48]]
+  Rendered entries/_index.html.erb (151.5ms)
+  Rendered entries/index.html.erb within layouts/application (161.6ms)
+Completed 200 OK in 820ms (Views: 768.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/style.self-ec4b5c7e6f0eaf309f9a015b8f20242b0ee0d0f2801051117b929f8063c5744d.css?body=1" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.css" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.css" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-1.10.2.min.js" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.css" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dataTables.min.js" for 150.161.2.202 at 2015-07-24 13:22:32 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.js" for 150.161.2.202 at 2015-07-24 13:22:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 150.161.2.202 at 2015-07-24 13:22:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/fontawesome-webfont.woff2?v=4.3.0" for 150.161.2.202 at 2015-07-24 13:22:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for 150.161.2.202 at 2015-07-24 13:22:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/grid.png" for 150.161.2.202 at 2015-07-24 13:22:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/feeds" for 150.161.2.202 at 2015-07-24 13:22:34 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds"
+  Rendered feeds/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feeds/47/edit" for 150.161.2.202 at 2015-07-24 13:22:39 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#edit as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered feeds/_form.html.erb (96.9ms)
+  Rendered feeds/edit.html.erb within layouts/application (100.4ms)
+Completed 200 OK in 260ms (Views: 255.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/new" for 150.161.2.202 at 2015-07-24 13:22:51 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered feeds/_form.html.erb (1.3ms)
+  Rendered feeds/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 97ms (Views: 95.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/feeds/new" for 150.161.2.202 at 2015-07-24 13:23:16 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered feeds/_form.html.erb (2.9ms)
+  Rendered feeds/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 176ms (Views: 174.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.css" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.css" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.js" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dataTables.min.js" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-1.10.2.min.js" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for 150.161.2.202 at 2015-07-24 13:23:17 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/feeds" for 150.161.2.202 at 2015-07-24 13:23:23 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d5hE8wA7FKzrAqrKt2fJYXsZ/HKIVqCNmFQCPHV7RCKxGS3Jh0JAYBQ2RPgi/B/GPLS8APiBkHxV4yK3Ocx+Tw==", "feed"=>{"title"=>"ig", "url"=>"http://rss.uol.com.br/feed/noticias.xml", "user_id"=>"1"}, "commit"=>"Cadastrar"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."url" = $1 AND "feeds"."user_id" = $2 LIMIT 1[0m  [["url", "http://rss.uol.com.br/feed/noticias.xml"], ["user_id", 1]]
+Redirected to https://myreader-mcncicco.c9.io/feeds/new
+Completed 302 Found in 64ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/feeds/new" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered feeds/_form.html.erb (1.1ms)
+  Rendered feeds/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 112ms (Views: 110.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.css" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.css" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-1.10.2.min.js" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.js" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dataTables.min.js" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for 150.161.2.202 at 2015-07-24 13:23:24 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/feeds" for 150.161.2.202 at 2015-07-24 13:23:33 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H/ueSpJQ6i1TWNuMin/kPYHDj8Ij7gWm8QVmbrPZ16DZevdwFSm+4axsNb4f5DKaxm7PsFM5NVc8skbl/27tzQ==", "feed"=>{"title"=>"Uol", "url"=>"http://www.uol.com.br", "user_id"=>"1"}, "commit"=>"Cadastrar"}
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."url" = $1 AND "feeds"."user_id" = $2 LIMIT 1[0m  [["url", "http://www.uol.com.br"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "feeds" ("title", "url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Uol"], ["url", "http://www.uol.com.br"], ["user_id", 1], ["created_at", "2015-07-24 13:23:33.120875"], ["updated_at", "2015-07-24 13:23:33.120875"]]
+  [1m[35m (12.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "feeds" SET "status" = $1, "updated_at" = $2 WHERE "feeds"."id" = $3  [["status", "Parser Error not well-formed (invalid token)"], ["updated_at", "2015-07-24 13:23:34.321855"], ["id", 50]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+Redirected to https://myreader-mcncicco.c9.io/feeds/50
+Completed 302 Found in 1212ms (ActiveRecord: 20.4ms)
+
+
+Started GET "/feeds/50" for 150.161.2.202 at 2015-07-24 13:23:34 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[35mFeed Load (0.3ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1  [["id", 50]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."feed_id" = $1  ORDER BY created_at DESC  [["feed_id", 50]]
+  Rendered entries/_index.html.erb (2.0ms)
+  Rendered feeds/show.html.erb within layouts/application (90.3ms)
+Completed 200 OK in 214ms (Views: 211.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.css" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-1.10.2.min.js" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dataTables.min.js" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dataTables.bootstrap.js" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.css" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/logo.png" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for 150.161.2.202 at 2015-07-24 13:23:35 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/feeds" for 150.161.2.202 at 2015-07-24 13:23:38 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFeed Load (0.3ms)[0m  SELECT "feeds".* FROM "feeds"
+  Rendered feeds/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 102ms (Views: 99.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feeds/49/edit" for 150.161.2.202 at 2015-07-24 13:23:40 +0000
+Cannot render console from 150.161.2.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FeedsController#edit as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered feeds/_form.html.erb (3.1ms)
+  Rendered feeds/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 138ms (Views: 135.6ms | ActiveRecord: 0.6ms)
