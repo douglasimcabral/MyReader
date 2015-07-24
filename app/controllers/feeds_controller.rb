@@ -50,7 +50,7 @@ class FeedsController < ApplicationController
     
   rescue => e
     @feed.destroy
-    redirect_to '/feeds/new', notice: "Nao foi possivel realizar sua solicitacao, verifique se a URL eh valida"
+    redirect_to '/feeds/new', notice: "Nao foi possivel realizar sua solicitacao, favor verificar se a URL informada eh valida!"
     
   end
 
